@@ -2,6 +2,8 @@
 
 Here we will make a python automation which will delete those notifications off your Android device every 2 hours, let's go ! 
 
+## Context
+
 Here's how we'll proceed : we'll access the phone through ADB and read notifications, 
 when "liked" is encountered, the whole line (which is the whole notification is deleted)
 we'll use an infinite loop + the sleep feature of the time library to add an interval
