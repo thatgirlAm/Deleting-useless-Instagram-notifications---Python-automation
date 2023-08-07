@@ -1,4 +1,4 @@
-#python automation project 1 : effacer les notifications contenant le mot "liked".
+#python automation project 1 : deleting "liked" notifications.
 
 #-------------------------------Explanations----------------------------------------
 #here's how we'll proceed : we'll access the phone through ADB and read notifications, 
