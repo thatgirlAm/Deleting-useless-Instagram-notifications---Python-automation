@@ -25,27 +25,27 @@ def deleting_notifications():
             notifications = subprocess.check_output(["adb", "shell", "dumpsys", "notification", "--noredact"]).decode("utf-8")
             
                 #lines itérations (notifications)
-                for line in notifications.split("\n"):
+            for line in notifications.split("\n"):
                     
-                    #condition testing 
-                    if "liked" in line:
+                #condition testing 
+                if "liked" in line:
                         
-                        #deleting the notification through ADB 
-                        notification_id = line.split(" ")[1].split(":")[1]
-                        subprocess.call(["adb", "shell", "service", "call", "notification", notification_id])
+                    #deleting the notification through ADB 
+                    notification_id = line.split(" ")[1].split(":")[1]
+                    subprocess.call(["adb", "shell", "service", "call", "notification", notification_id])
 
 
 #-------------------------------Running the scripts-----------------------------------------------------------
 
 #connecting 
-    connecting()
+connecting()
 
 #avoiding hiccups   
-   while (True):
-        #avoiding hiccups 
-        try : 
-            deleting_notifications()
-            time.sleep(7200)
-        except:
+while (True):
+    #avoiding hiccups 
+    try : 
+        deleting_notifications()
+        time.sleep(7200)
+    except:
         print ("Script error or human intervention")
 
