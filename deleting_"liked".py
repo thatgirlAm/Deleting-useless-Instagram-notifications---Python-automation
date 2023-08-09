@@ -36,11 +36,14 @@ def deleting_notifications():
 
 
 #-------------------------------Running the scripts-----------------------------------------------------------
+
+#connecting 
+    connecting()
+
 #avoiding hiccups   
    while (True):
         #avoiding hiccups 
         try : 
-            connecting()
             deleting_notifications()
             time.sleep(7200)
         except:
